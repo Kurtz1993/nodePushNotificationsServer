@@ -1,0 +1,21 @@
+{
+  "name": "pushPropuestas",
+  "version": "1.0.0",
+  "description": "Servicio de push notifications para la aplicación de propuestas de nacho peralta.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://dev.msw.com.mx/pushPropuestasNacho.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apn": "^1.7.3",
+    "body-parser": "^1.12.3",
+    "express": "^4.12.3",
+    "push-notify": "^1.1.1"
+  }
+}
