@@ -1,5 +1,5 @@
 var gcm 	= require('push-notify').gcm({
-			apiKey: 'AIzaSyDyczChXoV-NPDUlV0uFKjEHciRE-m2sd0',
+			apiKey: '',
 			retries: 4
 		});
 var pid;
@@ -8,7 +8,6 @@ var now = "";
 var time = new Date().toLocaleTimeString('latn')
 var date = new Date().toLocaleDateString('latn');
 now = date + " " + time; //Edit: changed TT to tt
-registrationIds.push('APA91bEkUcswRFUfg2kiQVjleJ8bEEzzX-HVwb6z8DqZTbkdJ0-eqXIPhbffm0Chn4IRCVH1NLg28ClBAMM4S-xWP8afslOdrvnDk2PK7XjCPF3KqbVWNhJ0CbsBnRJx8g46Drnyn0ttzESLae1pYwO31p3MFeoKcg');
 process.on('message', function (request){
   pid = request.pid;
   data = request.data;
@@ -17,7 +16,7 @@ process.on('message', function (request){
 		delayWhileIdle: true,
 		timeToLive: 5000,
 		data:{
-			title: 'Propuestas Nacho Peralta',
+			title: 'Título de la notificación',
 			message: data.message ? data.message : 'Un mensaje de push-notify',
 			timestamp: now,
 			soundname: 'default'

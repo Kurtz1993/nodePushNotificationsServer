@@ -1,17 +1,14 @@
 {
-  "name": "pushPropuestas",
+  "name": "nodePushNotificationsServer",
   "version": "1.0.0",
-  "description": "Servicio de push notifications para la aplicación de propuestas de nacho peralta.",
+  "description": "Servidor de push notifications para GCM y APN.",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "http://dev.msw.com.mx/pushPropuestasNacho.git"
+    "url": "https://github.com/kurtz1993/nodePushNotificationsServer.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Luis Rogelio Hernández López",
+  "license": "MIT",
   "dependencies": {
     "apn": "^1.7.3",
     "body-parser": "^1.12.3",

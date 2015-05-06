@@ -5,15 +5,12 @@ var apn 	 	=		require('apn'),
 		options = {
 			cert: "devCert.pem",
       key: "devKey.pem",
-      //passphrase: "Tgbed259",
-      //connectionTimeout: 3600,
       production: false
 		};
 
 var time = new Date().toLocaleTimeString('latn')
 var date = new Date().toLocaleDateString('latn');
 now = date + " " + time; //Edit: changed TT to tt
-tokens.push('cf1ddf9e61a6c2e73c8d2b7ef73a52655b98de94270f9a159fa2a579a97d89cd');
 process.on('message', function (request){
   pid = request.pid;		// Process ID del hilo.
   data = request.data;	// Datos de la notificación.
@@ -24,7 +21,7 @@ process.on('message', function (request){
   notification.expiry = Math.floor(Date.now() / 1000) + 3600; // Expires 1 hour from now.
   notification.badge = 0;
   notification.sound = "default";
-  notification.alert = 'Un mensaje de push-notify';
+  notification.alert = 'Un mensaje de node-APN';
   notification.payload = {
   	timestamp: now
   };
