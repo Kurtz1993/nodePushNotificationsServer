@@ -1,17 +1,18 @@
-var apn 	 	=		require('apn'),
-		pid 	 	=		null,
-		tokens 	=		[],
-		now 	 	=		"",
-		options = {
-			cert: "devCert.pem",
-      key: "devKey.pem",
-      production: false
-		};
+import apn  = require("apn");
+var pid     = null;
+var tokens  = [];
+var now     = "";
+var data: any;
+var options = {
+  cert: "devCert.pem",
+  key: "devKey.pem",
+  production: false
+};
 
 var time = new Date().toLocaleTimeString('latn')
 var date = new Date().toLocaleDateString('latn');
 now = date + " " + time; //Edit: changed TT to tt
-process.on('message', function (request){
+process.on('message', function(request) {
   pid = request.pid;		// Process ID del hilo.
   data = request.data;	// Datos de la notificación.
 
@@ -23,19 +24,19 @@ process.on('message', function (request){
   notification.sound = "default";
   notification.alert = 'Un mensaje de node-APN';
   notification.payload = {
-  	timestamp: now
+    timestamp: now
   };
 
   apnConnection.pushNotification(notification, tokens);
 
-	// Notificación exitosamente enviada...
-	apnConnection.on('transmitted', function (message, deviceToken){
+  // Notificación exitosamente enviada...
+  apnConnection.on('transmitted', function(message, deviceToken) {
     console.log('iOS: ' + message.alert);
-		process.kill(pid);
-	});
+    process.kill(pid);
+  });
 
-	//error
-  apnConnection.on('transmissionError', function (error, message, deviceToken) {
+  //error
+  apnConnection.on('transmissionError', function(error, message:any, deviceToken) {
     console.log("Error: " + message.data.message);
     false;
     process.kill(pid);

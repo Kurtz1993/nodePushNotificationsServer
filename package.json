@@ -1,5 +1,5 @@
 {
-  "name": "nodePushNotificationsServer",
+  "name": "npn-server",
   "version": "1.0.0",
   "description": "Servidor de push notifications para GCM y APN.",
   "main": "app.js",
@@ -14,5 +14,9 @@
     "body-parser": "^1.12.3",
     "express": "^4.12.3",
     "push-notify": "^1.1.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/kurtz1993/nodePushNotificationsServer/issues"
+  },
+  "homepage": "https://github.com/kurtz1993/nodePushNotificationsServer#readme"
 }
